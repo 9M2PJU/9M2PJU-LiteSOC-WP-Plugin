@@ -33,7 +33,7 @@ class LiteSOC_API {
 		if ( isset( $options['actor'] ) ) {
 			if ( is_array( $options['actor'] ) ) {
 				$actor = array(
-					'id'    => isset( $options['actor']['id'] ) ? $options['actor']['id'] : 'unknown',
+					'id'    => isset( $options['actor']['id'] ) ? (string) $options['actor']['id'] : 'unknown',
 					'email' => isset( $options['actor']['email'] ) ? $options['actor']['email'] : null,
 				);
 			} else {
