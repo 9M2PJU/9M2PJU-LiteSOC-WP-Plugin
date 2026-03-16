@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: 9M2PJU LiteSOC
- * Plugin URI: https://github.com/9M2PJU/9M2PJU-LiteSOC-Wordpress-Plugin
+ * Plugin URI: https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin
  * Description: LiteSOC security event tracking and threat detection for WordPress.
  * Version: 1.0.2
  * Author: 9M2PJU
