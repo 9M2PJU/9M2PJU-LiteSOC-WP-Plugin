@@ -4,14 +4,14 @@
 [![WordPress](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
 [![Version](https://img.shields.io/badge/Version-1.0.9-green.svg)](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/releases/latest)
 
-**9M2PJU LiteSOC** is a premium WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection and behavioral AI into your WordPress site.
+**9M2PJU LiteSOC** is a WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection and behavioral AI into your WordPress site.
 
 ## 🚀 Key Features
 
 - **Real-time Event Ingestion**: Automatically tracks authentication, user management, and admin activities.
 - **Hardened Security**: Includes IP validation (X-Forwarded-For support) and input sanitization.
 - **Behavioral AI Detection**: Identifies Geo-Anomalies, Impossible Travel, and Brute-force attacks.
-- **Premium Admin Dashboard**: Sleek interface with integrated logo and real-time security logs.
+- **Admin Dashboard**: Sleek interface with integrated logo and real-time security logs.
 - **Standardized Schema**: Uses the official LiteSOC event schema for maximum compatibility.
 
 ## 🏗 Architecture
