@@ -78,7 +78,7 @@ class LiteSOC_Admin {
 				<div class="litesoc-header-content">
 					<img src="<?php echo esc_url( LITESOC_URL . 'logo.png' ); ?>" class="litesoc-logo-header" alt="9M2PJU LiteSOC Logo">
 					<div class="litesoc-title-block">
-						<h1><?php _e( '9M2PJU LiteSOC', 'litesoc' ); ?></h1>
+						<h1><?php _e( '9M2PJU LiteSOC WP Plugin', 'litesoc' ); ?></h1>
 						<p class="litesoc-subtitle"><?php _e( 'Threat Detection & Event Tracking', 'litesoc' ); ?></p>
 					</div>
 				</div>
