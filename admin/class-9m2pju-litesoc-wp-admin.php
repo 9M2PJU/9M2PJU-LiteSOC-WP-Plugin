@@ -75,17 +75,17 @@ class _9M2PJU_LiteSOC_WP_Admin {
 			return;
 		}
 		?>
-		<div class="wrap 9m2pju-litesoc-wp-admin-wrap">
-			<div class="9m2pju-litesoc-wp-settings-header">
-				<div class="9m2pju-litesoc-wp-header-content">
-					<img src="<?php echo esc_url( _9M2PJU_LITESOC_WP_URL . 'logo.png' ); ?>" class="9m2pju-litesoc-wp-logo-header" alt="9M2PJU LiteSOC Logo">
-					<div class="9m2pju-litesoc-wp-title-block">
+		<div class="wrap _9m2pju-litesoc-wp-admin-wrap">
+			<div class="_9m2pju-litesoc-wp-settings-header">
+				<div class="_9m2pju-litesoc-wp-header-content">
+					<img src="<?php echo esc_url( _9M2PJU_LITESOC_WP_URL . 'logo.png' ); ?>" class="_9m2pju-litesoc-wp-logo-header" alt="9M2PJU LiteSOC Logo">
+					<div class="_9m2pju-litesoc-wp-title-block">
 						<h1><?php esc_html_e( '9M2PJU LiteSOC WP Plugin', '9m2pju-litesoc-wp' ); ?></h1>
-						<p class="9m2pju-litesoc-wp-subtitle"><?php esc_html_e( 'Threat Detection & Event Tracking', '9m2pju-litesoc-wp' ); ?></p>
+						<p class="_9m2pju-litesoc-wp-subtitle"><?php esc_html_e( 'Threat Detection & Event Tracking', '9m2pju-litesoc-wp' ); ?></p>
 					</div>
 				</div>
 			</div>
-			<div class="9m2pju-litesoc-wp-settings-body">
+			<div class="_9m2pju-litesoc-wp-settings-body">
 				<form action="options.php" method="post">
 				<?php
 				settings_fields( '9m2pju_litesoc_wp_settings' );
@@ -93,34 +93,13 @@ class _9M2PJU_LiteSOC_WP_Admin {
 				submit_button();
 				?>
 				</form>
-			</div> <!-- .9m2pju-litesoc-wp-settings-body -->
-			<div class="9m2pju-litesoc-wp-settings-footer">
-				<div class="9m2pju-litesoc-wp-footer-left">
-					<?php 
-					printf(
-						/* translators: 1: author name, 2: author URL */
-						esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc-wp' ),
-						'<a href="https://hamradio.my" target="_blank"><strong>9M2PJU</strong></a>',
-						'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc-wp' ) . '</a>'
-					);
-					?>
-				</div>
-				<div class="9m2pju-litesoc-wp-footer-right">
-					<?php 
-					printf(
-						/* translators: %s: version number */
-						esc_html__( 'Version %s', '9m2pju-litesoc-wp' ),
-						esc_html( _9M2PJU_LITESOC_WP_VERSION )
-					);
-					?>
-				</div>
-			</div>
-		</div> <!-- .9m2pju-litesoc-wp-admin-wrap -->
+			</div> <!-- ._9m2pju-litesoc-wp-settings-body -->
+		</div> <!-- ._9m2pju-litesoc-wp-admin-wrap -->
 		<?php
 	}
 
 	public function enqueue_styles( $hook ) {
-		if ( 'toplevel_page9m2pju-litesoc-wp' !== $hook && 'index.php' !== $hook ) {
+		if ( 'toplevel_page_9m2pju-litesoc-wp' !== $hook && 'index.php' !== $hook ) {
 			return;
 		}
 		wp_enqueue_style( '9m2pju-litesoc-wp-admin', _9M2PJU_LITESOC_WP_URL . 'admin/css/9m2pju-litesoc-wp-admin.css', array(), _9M2PJU_LITESOC_WP_VERSION );
@@ -147,13 +126,13 @@ class _9M2PJU_LiteSOC_WP_Admin {
 			return;
 		}
 
-		echo '<ul class="9m2pju-litesoc-wp-event-list">';
+		echo '<ul class="_9m2pju-litesoc-wp-event-list">';
 		foreach ( $events['data']['data'] as $event ) {
-			$severity_class = '9m2pju-litesoc-wp-severity-' . strtolower( $event['severity'] );
+			$severity_class = '_9m2pju-litesoc-wp-severity-' . strtolower( $event['severity'] );
 			echo '<li>';
-			echo '<span class="9m2pju-litesoc-wp-event-name">' . esc_html( $event['event_name'] ) . '</span>';
-			echo '<span class="9m2pju-litesoc-wp-event-meta">' . esc_html( $event['user_ip'] ) . ' - ' . esc_html( $event['actor_id'] ) . '</span>';
-			echo '<span class="9m2pju-litesoc-wp-severity ' . esc_attr( $severity_class ) . '">' . esc_html( $event['severity'] ) . '</span>';
+			echo '<span class="_9m2pju-litesoc-wp-event-name">' . esc_html( $event['event_name'] ) . '</span>';
+			echo '<span class="_9m2pju-litesoc-wp-event-meta">' . esc_html( $event['user_ip'] ) . ' - ' . esc_html( $event['actor_id'] ) . '</span>';
+			echo '<span class="_9m2pju-litesoc-wp-severity ' . esc_attr( $severity_class ) . '">' . esc_html( $event['severity'] ) . '</span>';
 			echo '</li>';
 		}
 		echo '</ul>';
