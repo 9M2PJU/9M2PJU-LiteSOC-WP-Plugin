@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: LiteSOC Security
- * Plugin URI: https://github.com/LiteSOC/litesoc-node
+ * Plugin Name: 9M2PJU LiteSOC
+ * Plugin URI: https://github.com/9M2PJU/9M2PJU-LiteSOC-Wordpress-Plugin
  * Description: LiteSOC security event tracking and threat detection for WordPress.
- * Version: 1.0.0
- * Author: LiteSOC
+ * Version: 1.0.1
+ * Author: 9M2PJU
  * Author URI: https://litesoc.io
  * License: MIT
  * Text Domain: litesoc
@@ -15,18 +15,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define constants
-define( 'LITESOC_VERSION', '1.0.0' );
-define( 'LITESOC_PATH', plugin_dir_path( __FILE__ ) );
-define( 'LITESOC_URL', plugin_dir_url( __FILE__ ) );
-
-// Include classes
-require_once LITESOC_PATH . 'includes/class-litesoc-api.php';
-require_once LITESOC_PATH . 'includes/class-litesoc-tracker.php';
-
-if ( is_admin() ) {
-	require_once LITESOC_PATH . 'admin/class-litesoc-admin.php';
+if ( ! defined( 'LITESOC_VERSION' ) ) {
+	define( 'LITESOC_VERSION', '1.0.1' );
+}
+if ( ! defined( 'LITESOC_PATH' ) ) {
+	define( 'LITESOC_PATH', plugin_dir_path( __FILE__ ) );
+}
+if ( ! defined( 'LITESOC_URL' ) ) {
+	define( 'LITESOC_URL', plugin_dir_url( __FILE__ ) );
 }
 
+// Include classes (unconditional for robustness during activation)
+require_once LITESOC_PATH . 'includes/class-litesoc-api.php';
+require_once LITESOC_PATH . 'includes/class-litesoc-tracker.php';
+require_once LITESOC_PATH . 'admin/class-litesoc-admin.php';
+
+if ( ! function_exists( 'litesoc_init' ) ) :
 /**
  * Initialize the plugin
  */
@@ -39,3 +43,4 @@ function litesoc_init() {
 	}
 }
 add_action( 'plugins_loaded', 'litesoc_init' );
+endif;

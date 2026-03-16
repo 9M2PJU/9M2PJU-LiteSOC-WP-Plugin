@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'LiteSOC_Admin' ) ) :
 /**
  * LiteSOC Admin Interface
  */
@@ -117,3 +118,4 @@ class LiteSOC_Admin {
 		echo '<p><a href="' . admin_url( 'admin.php?page=litesoc' ) . '">' . __( 'View all events', 'litesoc' ) . '</a></p>';
 	}
 }
+endif;

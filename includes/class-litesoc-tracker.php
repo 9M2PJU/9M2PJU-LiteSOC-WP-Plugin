@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'LiteSOC_Tracker' ) ) :
 /**
  * LiteSOC Event Tracker
  */
@@ -125,3 +126,4 @@ class LiteSOC_Tracker {
 		) );
 	}
 }
+endif;

@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'LiteSOC_API' ) ) :
 /**
  * LiteSOC API Wrapper
  */
@@ -84,6 +85,8 @@ class LiteSOC_API {
 		$args    = array(
 			'method'  => $method,
 			'headers' => array(
+				'X-API-Key'    => $this->api_key,
+				'Content-Type' => 'application/json',
 				'User-Agent'   => '9m2pju-litesoc-wordpress-plugin/' . LITESOC_VERSION,
 			),
 			'timeout' => 15,
@@ -122,3 +125,4 @@ class LiteSOC_API {
 		}
 	}
 }
+endif;
