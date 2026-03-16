@@ -92,8 +92,9 @@ class LiteSOC_Admin {
 				do_settings_sections( '9m2pju-litesoc' );
 				submit_button();
 				?>
-			</form>
-		</div>
+				</form>
+			</div> <!-- .litesoc-settings-body -->
+		</div> <!-- .litesoc-admin-wrap -->
 		<?php
 	}
 
@@ -149,7 +150,7 @@ class LiteSOC_Admin {
 	 */
 	public function admin_footer_text( $text ) {
 		$screen = get_current_screen();
-		if ( $screen && 'toplevel_page_9m2pju-litesoc' === $screen->id ) {
+		if ( $screen && strpos( $screen->id, '9m2pju-litesoc' ) !== false ) {
 			return sprintf(
 				/* translators: 1: author name, 2: author URL */
 				esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc' ),
@@ -165,7 +166,7 @@ class LiteSOC_Admin {
 	 */
 	public function update_footer( $text ) {
 		$screen = get_current_screen();
-		if ( $screen && 'toplevel_page_9m2pju-litesoc' === $screen->id ) {
+		if ( $screen && strpos( $screen->id, '9m2pju-litesoc' ) !== false ) {
 			return sprintf(
 				/* translators: %s: version number */
 				esc_html__( 'Version %s', '9m2pju-litesoc' ),
