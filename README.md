@@ -60,4 +60,6 @@ Verified via brute-force simulation tests:
 - **Latency**: <200ms avg response from api.litesoc.io.
 - **Success Rate**: 100% on valid payload delivery.
 
-
+---
+**Official Repository**: [https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin)
+**Author**: [9M2PJU](https://hamradio.my)
