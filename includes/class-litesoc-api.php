@@ -116,13 +116,21 @@ class LiteSOC_API {
 	}
 
 	private function get_user_ip() {
+		$ip = $_SERVER['REMOTE_ADDR'];
 		if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-			return $_SERVER['HTTP_CLIENT_IP'];
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
 		} elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-			return $_SERVER['HTTP_X_FORWARDED_FOR'];
-		} else {
-			return $_SERVER['REMOTE_ADDR'];
+			// Get the first IP in the list
+			$ips = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
+			$ip  = trim( $ips[0] );
 		}
+
+		// Validate IP
+		if ( filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+			return $ip;
+		}
+
+		return $_SERVER['REMOTE_ADDR'];
 	}
 }
 endif;

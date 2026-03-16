@@ -33,13 +33,13 @@ class LiteSOC_Admin {
 			'manage_options',
 			'litesoc',
 			array( $this, 'render_settings_page' ),
-			'dashicons-shield-alt',
+			LITESOC_URL . 'logo.png',
 			80
 		);
 	}
 
 	public function register_settings() {
-		register_setting( 'litesoc_settings', 'litesoc_api_key' );
+		register_setting( 'litesoc_settings', 'litesoc_api_key', 'sanitize_text_field' );
 		
 		add_settings_section(
 			'litesoc_main_section',
@@ -58,6 +58,9 @@ class LiteSOC_Admin {
 	}
 
 	public function render_api_key_field() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 		$key = get_option( 'litesoc_api_key' );
 		?>
 		<input type="password" name="litesoc_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
@@ -66,6 +69,9 @@ class LiteSOC_Admin {
 	}
 
 	public function render_settings_page() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 		?>
 		<div class="wrap litesoc-admin-wrap">
 			<h1><?php _e( '9M2PJU LiteSOC WP Settings', 'litesoc' ); ?></h1>
