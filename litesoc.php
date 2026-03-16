@@ -3,7 +3,7 @@
  * Plugin Name: 9M2PJU LiteSOC
  * Plugin URI: https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin
  * Description: LiteSOC security event tracking and threat detection for WordPress.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: 9M2PJU
  * Author URI: https://hamradio.my
  * License: MIT
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define constants
 if ( ! defined( 'LITESOC_VERSION' ) ) {
-	define( 'LITESOC_VERSION', '1.0.7' );
+	define( 'LITESOC_VERSION', '1.0.8' );
 }
 if ( ! defined( 'LITESOC_PATH' ) ) {
 	define( 'LITESOC_PATH', plugin_dir_path( __FILE__ ) );
