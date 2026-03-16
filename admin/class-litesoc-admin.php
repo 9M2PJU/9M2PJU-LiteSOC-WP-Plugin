@@ -24,6 +24,8 @@ class LiteSOC_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
 		add_filter( 'plugin_action_links_' . $this->plugin_basename, array( $this, 'add_action_links' ) );
+		add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ) );
+		add_filter( 'update_footer', array( $this, 'update_footer' ), 11 );
 	}
 
 	public function add_menu_pages() {
@@ -140,6 +142,37 @@ class LiteSOC_Admin {
 		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=9m2pju-litesoc' ) ) . '">' . esc_html__( 'Settings', '9m2pju-litesoc' ) . '</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
+	}
+
+	/**
+	 * Add footer text for the plugin settings page.
+	 */
+	public function admin_footer_text( $text ) {
+		$screen = get_current_screen();
+		if ( $screen && 'toplevel_page_9m2pju-litesoc' === $screen->id ) {
+			return sprintf(
+				/* translators: 1: author name, 2: author URL */
+				esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc' ),
+				'<strong>9M2PJU</strong>',
+				'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc' ) . '</a>'
+			);
+		}
+		return $text;
+	}
+
+	/**
+	 * Add version info to the footer on the plugin settings page.
+	 */
+	public function update_footer( $text ) {
+		$screen = get_current_screen();
+		if ( $screen && 'toplevel_page_9m2pju-litesoc' === $screen->id ) {
+			return sprintf(
+				/* translators: %s: version number */
+				esc_html__( 'Version %s', '9m2pju-litesoc' ),
+				LITESOC_VERSION
+			);
+		}
+		return $text;
 	}
 }
 endif;
