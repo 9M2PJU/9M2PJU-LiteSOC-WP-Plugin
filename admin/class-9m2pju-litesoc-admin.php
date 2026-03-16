@@ -78,7 +78,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 				<div class="_9m2pju-litesoc-header-content">
 					<img src="<?php echo esc_url( LITESOC_9M2PJU_URL . 'logo.png' ); ?>" class="_9m2pju-litesoc-logo-header" alt="9M2PJU LiteSOC Logo">
 					<div class="_9m2pju-litesoc-title-block">
-						<h1><?php esc_html_e( '9M2PJU LiteSOC Plugin', '9m2pju-litesoc' ); ?></h1>
+						<h1><?php esc_html_e( '9M2PJU LiteSOC WP Plugin', '9m2pju-litesoc' ); ?></h1>
 						<p class="_9m2pju-litesoc-subtitle"><?php esc_html_e( 'Threat Detection & Event Tracking', '9m2pju-litesoc' ); ?></p>
 					</div>
 				</div>

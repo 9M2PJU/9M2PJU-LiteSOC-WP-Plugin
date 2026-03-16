@@ -1,10 +1,10 @@
-=== 9M2PJU LiteSOC ===
+=== 9M2PJU LiteSOC WP Plugin ===
 Contributors: piju9m2pju
 Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
@@ -39,6 +39,10 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 1. The 9M2PJU LiteSOC Admin Dashboard.
 
 == Changelog ==
+
+= 1.1.8 =
+* Rebranded to '9M2PJU LiteSOC WP Plugin' for consistent naming.
+* Bumping version for official submission.
 
 = 1.1.7 =
 * Final polish for official WordPress.org submission.
