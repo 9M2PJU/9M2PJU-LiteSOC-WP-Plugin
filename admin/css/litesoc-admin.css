@@ -1,18 +1,75 @@
 .litesoc-admin-wrap {
-    max-width: 800px;
+    max-width: 900px;
     background: #fff;
-    padding: 2rem;
+    padding: 0;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin: 2rem auto;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
-.litesoc-admin-wrap h1 {
-    font-weight: 700;
-    color: #1a1a1a;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+.litesoc-settings-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 2.5rem;
+    color: #fff;
+    border-bottom: 4px solid #38bdf8;
+    position: relative;
+    overflow: hidden;
+}
+
+.litesoc-settings-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.litesoc-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.litesoc-logo-header {
+    height: 80px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    border: 2px solid rgba(56, 189, 248, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.litesoc-logo-header:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+}
+
+.litesoc-title-block h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff !important;
+    letter-spacing: -0.025em;
+    border: none !important;
+}
+
+.litesoc-subtitle {
+    margin: 0.25rem 0 0 0;
+    font-size: 1rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.litesoc-settings-body {
+    padding: 2.5rem;
 }
 
 .litesoc-event-list {

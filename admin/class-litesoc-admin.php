@@ -74,11 +74,17 @@ class LiteSOC_Admin {
 		}
 		?>
 		<div class="wrap litesoc-admin-wrap">
-			<div class="litesoc-header">
-				<img src="<?php echo esc_url( LITESOC_URL . 'logo.png' ); ?>" class="litesoc-logo-large" style="max-height: 80px; margin-bottom: 20px;">
-				<h1><?php _e( '9M2PJU LiteSOC WP Settings', 'litesoc' ); ?></h1>
+			<div class="litesoc-settings-header">
+				<div class="litesoc-header-content">
+					<img src="<?php echo esc_url( LITESOC_URL . 'logo.png' ); ?>" class="litesoc-logo-header" alt="9M2PJU LiteSOC Logo">
+					<div class="litesoc-title-block">
+						<h1><?php _e( '9M2PJU LiteSOC', 'litesoc' ); ?></h1>
+						<p class="litesoc-subtitle"><?php _e( 'Threat Detection & Event Tracking', 'litesoc' ); ?></p>
+					</div>
+				</div>
 			</div>
-			<form action="options.php" method="post">
+			<div class="litesoc-settings-body">
+				<form action="options.php" method="post">
 				<?php
 				settings_fields( 'litesoc_settings' );
 				do_settings_sections( 'litesoc' );
