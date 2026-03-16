@@ -174,38 +174,29 @@
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     color: #64748b;
     font-size: 0.95rem;
+    width: 100%;
 }
 
 ._9m2pju-litesoc-wp-internal-footer p {
-    margin: 0;
-}
-
-._9m2pju-litesoc-wp-internal-footer a {
-    color: #0f172a;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-._9m2pju-litesoc-wp-internal-footer a:hover {
-    color: #38bdf8;
-}
-
-._9m2pju-litesoc-wp-internal-footer strong {
-    color: #0f172a;
+    margin: 0 0 1.5rem 0;
 }
 
 ._9m2pju-litesoc-wp-donation-wrap {
-    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 ._9m2pju-litesoc-wp-bmc-button {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    line-height: 0;
 }
 
 ._9m2pju-litesoc-wp-bmc-button:hover {
