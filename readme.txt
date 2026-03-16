@@ -2,9 +2,9 @@
 Contributors: piju9m2pju
 Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
@@ -25,7 +25,7 @@ LiteSOC security event tracking and threat detection for WordPress.
 
 == Installation ==
 
-1. Upload the `9m2pju-litesoc-wp` folder to your `/wp-content/plugins/` directory.
+1. Upload the `9m2pju-litesoc` folder to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to the 9M2PJU LiteSOC menu and enter your API Key from the LiteSOC Dashboard.
 

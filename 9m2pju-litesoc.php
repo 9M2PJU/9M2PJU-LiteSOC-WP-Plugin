@@ -8,7 +8,7 @@
  * Author URI: https://hamradio.my
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: 9m2pju-litesoc-wp
+ * Text Domain: 9m2pju-litesoc
  * Requires PHP: 7.2
  */
 
@@ -17,32 +17,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define constants
-if ( ! defined( '_9M2PJU_LITESOC_WP_VERSION' ) ) {
-	define( '_9M2PJU_LITESOC_WP_VERSION', '1.1.3' );
+if ( ! defined( 'LITESOC_9M2PJU_VERSION' ) ) {
+	define( 'LITESOC_9M2PJU_VERSION', '1.1.4' );
 }
-if ( ! defined( '_9M2PJU_LITESOC_WP_PATH' ) ) {
-	define( '_9M2PJU_LITESOC_WP_PATH', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'LITESOC_9M2PJU_PATH' ) ) {
+	define( 'LITESOC_9M2PJU_PATH', plugin_dir_path( __FILE__ ) );
 }
-if ( ! defined( '_9M2PJU_LITESOC_WP_URL' ) ) {
-	define( '_9M2PJU_LITESOC_WP_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'LITESOC_9M2PJU_URL' ) ) {
+	define( 'LITESOC_9M2PJU_URL', plugin_dir_url( __FILE__ ) );
 }
 
 // Include classes (unconditional for robustness during activation)
-require_once _9M2PJU_LITESOC_WP_PATH . 'includes/class-9m2pju-litesoc-wp-api.php';
-require_once _9M2PJU_LITESOC_WP_PATH . 'includes/class-9m2pju-litesoc-wp-tracker.php';
-require_once _9M2PJU_LITESOC_WP_PATH . 'admin/class-9m2pju-litesoc-wp-admin.php';
+require_once LITESOC_9M2PJU_PATH . 'includes/class-9m2pju-litesoc-api.php';
+require_once LITESOC_9M2PJU_PATH . 'includes/class-9m2pju-litesoc-tracker.php';
+require_once LITESOC_9M2PJU_PATH . 'admin/class-9m2pju-litesoc-admin.php';
 
-if ( ! function_exists( '_9m2pju_litesoc_wp_init' ) ) :
+if ( ! function_exists( 'litesoc_9m2pju_init' ) ) :
 /**
  * Initialize the plugin
  */
-function _9m2pju_litesoc_wp_init() {
-	$api     = new _9M2PJU_LiteSOC_WP_API();
-	$tracker = new _9M2PJU_LiteSOC_WP_Tracker( $api );
+function litesoc_9m2pju_init() {
+	$api     = new LITESOC_9M2PJU_LiteSOC_API();
+	$tracker = new LITESOC_9M2PJU_LiteSOC_Tracker( $api );
 	
 	if ( is_admin() ) {
-		new _9M2PJU_LiteSOC_WP_Admin( $api, plugin_basename( __FILE__ ) );
+		new LITESOC_9M2PJU_LiteSOC_Admin( $api, plugin_basename( __FILE__ ) );
 	}
 }
-add_action( 'plugins_loaded', '_9m2pju_litesoc_wp_init' );
+add_action( 'plugins_loaded', 'litesoc_9m2pju_init' );
 endif;

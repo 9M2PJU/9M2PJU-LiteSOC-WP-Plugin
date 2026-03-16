@@ -4,16 +4,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( '_9M2PJU_LiteSOC_WP_API' ) ) :
+if ( ! class_exists( 'LITESOC_9M2PJU_LiteSOC_API' ) ) :
 /**
  * LiteSOC API Wrapper
  */
-class _9M2PJU_LiteSOC_WP_API {
+class LITESOC_9M2PJU_LiteSOC_API {
 	private $api_key;
 	private $base_url = 'https://api.litesoc.io';
 
 	public function __construct() {
-		$this->api_key = get_option( '9m2pju_litesoc_wp_api_key' );
+		$this->api_key = get_option( 'litesoc_9m2pju_api_key' );
 	}
 
 	public function set_api_key( $key ) {
@@ -78,7 +78,7 @@ class _9M2PJU_LiteSOC_WP_API {
 	 */
 	private function request( $endpoint, $params = array(), $method = 'POST' ) {
 		if ( ! $this->api_key ) {
-			return new WP_Error( 'no_api_key', esc_html__( 'LiteSOC API Key is missing.', '9m2pju-litesoc-wp' ) );
+			return new WP_Error( 'no_api_key', esc_html__( 'LiteSOC API Key is missing.', '9m2pju-litesoc' ) );
 		}
 
 		$url     = $this->base_url . $endpoint;
@@ -87,7 +87,7 @@ class _9M2PJU_LiteSOC_WP_API {
 			'headers' => array(
 				'X-API-Key'    => $this->api_key,
 				'Content-Type' => 'application/json',
-				'User-Agent'   => '9m2pju-litesoc-wp-wordpress-plugin/' . _9M2PJU_LITESOC_WP_VERSION,
+				'User-Agent'   => '9m2pju-litesoc-wordpress-plugin/' . LITESOC_9M2PJU_VERSION,
 			),
 			'timeout' => 15,
 		);

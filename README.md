@@ -50,7 +50,7 @@ The plugin provides granular insights into your site's security posture:
 
 ## 🛠 Installation
 
-1. Upload the `9m2pju-litesoc-wp` folder to your `/wp-content/plugins/` directory.
+1. Upload the `9m2pju-litesoc` folder to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to the **9M2PJU LiteSOC** menu and enter your API Key from the LiteSOC Dashboard.
 
