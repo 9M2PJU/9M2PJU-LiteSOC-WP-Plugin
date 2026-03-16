@@ -33,7 +33,7 @@ class LiteSOC_Admin {
 			'manage_options',
 			'litesoc',
 			array( $this, 'render_settings_page' ),
-			LITESOC_URL . 'logo.png',
+			'dashicons-shield-alt',
 			80
 		);
 	}
@@ -74,7 +74,10 @@ class LiteSOC_Admin {
 		}
 		?>
 		<div class="wrap litesoc-admin-wrap">
-			<h1><?php _e( '9M2PJU LiteSOC WP Settings', 'litesoc' ); ?></h1>
+			<div class="litesoc-header">
+				<img src="<?php echo esc_url( LITESOC_URL . 'logo.png' ); ?>" class="litesoc-logo-large" style="max-height: 80px; margin-bottom: 20px;">
+				<h1><?php _e( '9M2PJU LiteSOC WP Settings', 'litesoc' ); ?></h1>
+			</div>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'litesoc_settings' );
