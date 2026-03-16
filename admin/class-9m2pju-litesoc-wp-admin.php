@@ -24,8 +24,6 @@ class _9M2PJU_LiteSOC_WP_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
 		add_filter( 'plugin_action_links_' . $this->plugin_basename, array( $this, 'add_action_links' ) );
-		add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ) );
-		add_filter( 'update_footer', array( $this, 'update_footer' ), 11 );
 	}
 
 	public function add_menu_pages() {
@@ -93,6 +91,20 @@ class _9M2PJU_LiteSOC_WP_Admin {
 				submit_button();
 				?>
 				</form>
+				
+				<div class="_9m2pju-litesoc-wp-internal-footer">
+					<p>
+						<?php 
+						printf(
+							/* translators: 1: author name, 2: author URL, 3: version */
+							esc_html__( 'By %1$s | Visit %2$s | Version %3$s', '9m2pju-litesoc-wp' ),
+							'<a href="https://hamradio.my" target="_blank"><strong>9M2PJU</strong></a>',
+							'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc-wp' ) . '</a>',
+							'<strong>' . esc_html( _9M2PJU_LITESOC_WP_VERSION ) . '</strong>'
+						);
+						?>
+					</p>
+				</div>
 			</div> <!-- ._9m2pju-litesoc-wp-settings-body -->
 		</div> <!-- ._9m2pju-litesoc-wp-admin-wrap -->
 		<?php
@@ -143,37 +155,6 @@ class _9M2PJU_LiteSOC_WP_Admin {
 		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=9m2pju-litesoc-wp' ) ) . '">' . esc_html__( 'Settings', '9m2pju-litesoc-wp' ) . '</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
-	}
-
-	/**
-	 * Add footer text for the plugin settings page.
-	 */
-	public function admin_footer_text( $text ) {
-		$screen = get_current_screen();
-		if ( $screen && strpos( $screen->id, '9m2pju-litesoc-wp' ) !== false ) {
-			return sprintf(
-				/* translators: 1: author name, 2: author URL */
-				esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc-wp' ),
-				'<a href="https://hamradio.my" target="_blank"><strong>9M2PJU</strong></a>',
-				'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc-wp' ) . '</a>'
-			);
-		}
-		return $text;
-	}
-
-	/**
-	 * Add version info to the footer on the plugin settings page.
-	 */
-	public function update_footer( $text ) {
-		$screen = get_current_screen();
-		if ( $screen && strpos( $screen->id, '9m2pju-litesoc-wp' ) !== false ) {
-			return sprintf(
-				/* translators: %s: version number */
-				esc_html__( 'Version %s', '9m2pju-litesoc-wp' ),
-				_9M2PJU_LITESOC_WP_VERSION
-			);
-		}
-		return $text;
 	}
 }
 endif;

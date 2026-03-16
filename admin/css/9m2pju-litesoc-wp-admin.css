@@ -169,3 +169,30 @@
     border-left-color: #38bdf8;
     transform: none;
 }
+
+._9m2pju-litesoc-wp-internal-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+._9m2pju-litesoc-wp-internal-footer p {
+    margin: 0;
+}
+
+._9m2pju-litesoc-wp-internal-footer a {
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+._9m2pju-litesoc-wp-internal-footer a:hover {
+    color: #38bdf8;
+}
+
+._9m2pju-litesoc-wp-internal-footer strong {
+    color: #0f172a;
+}
