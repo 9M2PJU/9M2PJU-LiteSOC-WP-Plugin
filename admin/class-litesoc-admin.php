@@ -153,7 +153,7 @@ class LiteSOC_Admin {
 			return sprintf(
 				/* translators: 1: author name, 2: author URL */
 				esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc' ),
-				'<strong>9M2PJU</strong>',
+				'<a href="https://hamradio.my" target="_blank"><strong>9M2PJU</strong></a>',
 				'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc' ) . '</a>'
 			);
 		}
