@@ -28,10 +28,10 @@ class LiteSOC_Admin {
 
 	public function add_menu_pages() {
 		add_menu_page(
-			__( '9M2PJU LiteSOC WP Settings', 'litesoc' ),
+			__( '9M2PJU LiteSOC WP Settings', '9m2pju-litesoc' ),
 			'9M2PJU LiteSOC',
 			'manage_options',
-			'litesoc',
+			'9m2pju-litesoc',
 			array( $this, 'render_settings_page' ),
 			'dashicons-shield-alt',
 			80
@@ -43,16 +43,16 @@ class LiteSOC_Admin {
 		
 		add_settings_section(
 			'litesoc_main_section',
-			__( 'API Configuration', 'litesoc' ),
+			__( 'API Configuration', '9m2pju-litesoc' ),
 			null,
-			'litesoc'
+			'9m2pju-litesoc'
 		);
 
 		add_settings_field(
 			'litesoc_api_key',
-			__( 'LiteSOC API Key', 'litesoc' ),
+			__( 'LiteSOC API Key', '9m2pju-litesoc' ),
 			array( $this, 'render_api_key_field' ),
-			'litesoc',
+			'9m2pju-litesoc',
 			'litesoc_main_section'
 		);
 	}
@@ -64,7 +64,7 @@ class LiteSOC_Admin {
 		$key = get_option( 'litesoc_api_key' );
 		?>
 		<input type="password" name="litesoc_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
-		<p class="description"><?php _e( 'Enter your LiteSOC API Key from your dashboard.', 'litesoc' ); ?></p>
+		<p class="description"><?php _e( 'Enter your LiteSOC API Key from your dashboard.', '9m2pju-litesoc' ); ?></p>
 		<?php
 	}
 
@@ -78,8 +78,8 @@ class LiteSOC_Admin {
 				<div class="litesoc-header-content">
 					<img src="<?php echo esc_url( LITESOC_URL . 'logo.png' ); ?>" class="litesoc-logo-header" alt="9M2PJU LiteSOC Logo">
 					<div class="litesoc-title-block">
-						<h1><?php _e( '9M2PJU LiteSOC WP Plugin', 'litesoc' ); ?></h1>
-						<p class="litesoc-subtitle"><?php _e( 'Threat Detection & Event Tracking', 'litesoc' ); ?></p>
+						<h1><?php _e( '9M2PJU LiteSOC WP Plugin', '9m2pju-litesoc' ); ?></h1>
+						<p class="litesoc-subtitle"><?php _e( 'Threat Detection & Event Tracking', '9m2pju-litesoc' ); ?></p>
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@ class LiteSOC_Admin {
 				<form action="options.php" method="post">
 				<?php
 				settings_fields( 'litesoc_settings' );
-				do_settings_sections( 'litesoc' );
+				do_settings_sections( '9m2pju-litesoc' );
 				submit_button();
 				?>
 			</form>
@@ -105,7 +105,7 @@ class LiteSOC_Admin {
 	public function add_dashboard_widget() {
 		wp_add_dashboard_widget(
 			'litesoc_events_widget',
-			__( '9M2PJU LiteSOC Recent Security Events', 'litesoc' ),
+			__( '9M2PJU LiteSOC Recent Security Events', '9m2pju-litesoc' ),
 			array( $this, 'render_dashboard_widget' )
 		);
 	}
@@ -119,7 +119,7 @@ class LiteSOC_Admin {
 		}
 
 		if ( empty( $events['data']['data'] ) ) {
-			echo '<p>' . __( 'No recent events found.', 'litesoc' ) . '</p>';
+			echo '<p>' . __( 'No recent events found.', '9m2pju-litesoc' ) . '</p>';
 			return;
 		}
 
@@ -133,11 +133,11 @@ class LiteSOC_Admin {
 			echo '</li>';
 		}
 		echo '</ul>';
-		echo '<p><a href="' . admin_url( 'admin.php?page=litesoc' ) . '">' . __( 'View all events', 'litesoc' ) . '</a></p>';
+		echo '<p><a href="' . admin_url( 'admin.php?page=litesoc' ) . '">' . __( 'View all events', '9m2pju-litesoc' ) . '</a></p>';
 	}
 
 	public function add_action_links( $links ) {
-		$settings_link = '<a href="admin.php?page=litesoc">' . __( 'Settings', 'litesoc' ) . '</a>';
+		$settings_link = '<a href="admin.php?page=litesoc">' . __( 'Settings', '9m2pju-litesoc' ) . '</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
 	}

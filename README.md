@@ -59,4 +59,7 @@ Verified via brute-force simulation tests:
 - **Throughput**: ~5 events/sec (unbatched).
 - **Latency**: <200ms avg response from api.litesoc.io.
 - **Success Rate**: 100% on valid payload delivery.
+### 📄 License
+
+This project is licensed under the **GPLv3 or later** - see the [LICENSE](LICENSE) file for details.
 

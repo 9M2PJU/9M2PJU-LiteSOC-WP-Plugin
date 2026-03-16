@@ -6,8 +6,10 @@
  * Version: 1.1.1
  * Author: 9M2PJU
  * Author URI: https://hamradio.my
- * License: MIT
- * Text Domain: litesoc
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: 9m2pju-litesoc
+ * Requires PHP: 7.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

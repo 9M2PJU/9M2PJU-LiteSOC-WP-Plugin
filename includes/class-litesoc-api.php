@@ -78,7 +78,7 @@ class LiteSOC_API {
 	 */
 	private function request( $endpoint, $params = array(), $method = 'POST' ) {
 		if ( ! $this->api_key ) {
-			return new WP_Error( 'no_api_key', __( 'LiteSOC API Key is missing.', 'litesoc' ) );
+			return new WP_Error( 'no_api_key', __( 'LiteSOC API Key is missing.', '9m2pju-litesoc' ) );
 		}
 
 		$url     = $this->base_url . $endpoint;
