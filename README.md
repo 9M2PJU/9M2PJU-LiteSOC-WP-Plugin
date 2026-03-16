@@ -58,5 +58,4 @@ Verified via brute-force simulation tests:
 - **Latency**: <200ms avg response from api.litesoc.io.
 - **Success Rate**: 100% on valid payload delivery.
 
----
-Developed with ❤️ by 9M2PJU.
+
