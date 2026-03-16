@@ -10,9 +10,11 @@ if ( ! class_exists( 'LiteSOC_Admin' ) ) :
  */
 class LiteSOC_Admin {
 	private $api;
+	private $plugin_basename;
 
-	public function __construct( $api ) {
-		$this->api = $api;
+	public function __construct( $api, $plugin_basename ) {
+		$this->api             = $api;
+		$this->plugin_basename = $plugin_basename;
 		$this->init_hooks();
 	}
 
@@ -21,6 +23,7 @@ class LiteSOC_Admin {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
+		add_filter( 'plugin_action_links_' . $this->plugin_basename, array( $this, 'add_action_links' ) );
 	}
 
 	public function add_menu_pages() {
@@ -116,6 +119,12 @@ class LiteSOC_Admin {
 		}
 		echo '</ul>';
 		echo '<p><a href="' . admin_url( 'admin.php?page=litesoc' ) . '">' . __( 'View all events', 'litesoc' ) . '</a></p>';
+	}
+
+	public function add_action_links( $links ) {
+		$settings_link = '<a href="admin.php?page=litesoc">' . __( 'Settings', 'litesoc' ) . '</a>';
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 }
 endif;
