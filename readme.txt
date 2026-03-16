@@ -4,22 +4,22 @@ Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
 
-LiteSOC security event tracking and threat detection for WordPress.
+LiteSOC security event tracking with Behavioral AI & Geo-IP Intelligence for WordPress.
 
 == Description ==
 
-9M2PJU LiteSOC is a WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection and behavioral AI into your WordPress site.
+9M2PJU LiteSOC is a WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection, Behavioral AI, and Geo-IP Intelligence into your WordPress site.
 
 = Key Features =
 
 * **Real-time Event Ingestion**: Automatically tracks authentication, user management, and admin activities.
+* **Behavioral AI & Geo-IP Intelligence**: Identifies Geo-Anomalies, Impossible Travel, and Advanced Brute-force attacks using integrated AI models.
 * **Hardened Security**: Includes IP validation (X-Forwarded-For support) and input sanitization.
-* **Behavioral AI Detection**: Identifies Geo-Anomalies, Impossible Travel, and Brute-force attacks.
 * **Admin Dashboard**: Sleek interface with integrated logo and real-time security logs.
 * **Standardized Schema**: Uses the official LiteSOC event schema for maximum compatibility.
 
@@ -39,6 +39,10 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 1. The 9M2PJU LiteSOC Admin Dashboard.
 
 == Changelog ==
+
+= 1.1.6 =
+* Updated marketing copy to highlight Behavioral AI & Geo-IP Intelligence.
+* Bumping version for official submission.
 
 = 1.1.5 =
 * WordPress.org compliance fixes: localizing assets, updating prefixes, and removing restricted term 'wp' from slugs.
