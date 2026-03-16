@@ -104,6 +104,11 @@ class _9M2PJU_LiteSOC_WP_Admin {
 						);
 						?>
 					</p>
+					<div class="_9m2pju-litesoc-wp-donation-wrap">
+						<a href="https://www.buymeacoffee.com/9m2pju" target="_blank" class="_9m2pju-litesoc-wp-bmc-button">
+							<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 144px !important;" >
+						</a>
+					</div>
 				</div>
 			</div> <!-- ._9m2pju-litesoc-wp-settings-body -->
 		</div> <!-- ._9m2pju-litesoc-wp-admin-wrap -->

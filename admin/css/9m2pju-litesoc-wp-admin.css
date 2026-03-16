@@ -196,3 +196,19 @@
 ._9m2pju-litesoc-wp-internal-footer strong {
     color: #0f172a;
 }
+
+._9m2pju-litesoc-wp-donation-wrap {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+._9m2pju-litesoc-wp-bmc-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+._9m2pju-litesoc-wp-bmc-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0 10px 15px rgba(255, 221, 0, 0.3));
+}
