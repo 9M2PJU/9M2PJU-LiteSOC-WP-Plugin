@@ -6,8 +6,8 @@
  * Version: 1.1.1
  * Author: 9M2PJU
  * Author URI: https://hamradio.my
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * License: GPLv3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: 9m2pju-litesoc
  * Requires PHP: 7.2
  */

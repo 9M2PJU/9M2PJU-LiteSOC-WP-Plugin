@@ -96,7 +96,7 @@ class LiteSOC_Admin {
 	}
 
 	public function enqueue_styles( $hook ) {
-		if ( 'toplevel_page_litesoc' !== $hook && 'index.php' !== $hook ) {
+		if ( 'toplevel_page_9m2pju-litesoc' !== $hook && 'index.php' !== $hook ) {
 			return;
 		}
 		wp_enqueue_style( 'litesoc-admin', LITESOC_URL . 'admin/css/litesoc-admin.css', array(), LITESOC_VERSION );
@@ -133,11 +133,11 @@ class LiteSOC_Admin {
 			echo '</li>';
 		}
 		echo '</ul>';
-		echo '<p><a href="' . esc_url( admin_url( 'admin.php?page=litesoc' ) ) . '">' . esc_html__( 'View all events', '9m2pju-litesoc' ) . '</a></p>';
+		echo '<p><a href="' . esc_url( admin_url( 'admin.php?page=9m2pju-litesoc' ) ) . '">' . esc_html__( 'View all events', '9m2pju-litesoc' ) . '</a></p>';
 	}
 
 	public function add_action_links( $links ) {
-		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=litesoc' ) ) . '">' . esc_html__( 'Settings', '9m2pju-litesoc' ) . '</a>';
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=9m2pju-litesoc' ) ) . '">' . esc_html__( 'Settings', '9m2pju-litesoc' ) . '</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
 	}
