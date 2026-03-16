@@ -4,7 +4,7 @@ Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
@@ -39,6 +39,11 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 1. The 9M2PJU LiteSOC Admin Dashboard.
 
 == Changelog ==
+
+= 1.2.0 =
+* Final production release for official WordPress.org submission.
+* Optimized event tracking logic and refined UI components.
+* Refreshed documentation and metadata.
 
 = 1.1.9 =
 * Compliance fix: Removed 'WP' and 'Plugin' from official headers as per WordPress.org requirements.
