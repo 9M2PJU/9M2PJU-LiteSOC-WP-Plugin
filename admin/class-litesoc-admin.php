@@ -24,8 +24,8 @@ class LiteSOC_Admin {
 
 	public function add_menu_pages() {
 		add_menu_page(
-			__( 'LiteSOC Security', 'litesoc' ),
-			'LiteSOC',
+			__( '9M2PJU LiteSOC WP Settings', 'litesoc' ),
+			'9M2PJU LiteSOC',
 			'manage_options',
 			'litesoc',
 			array( $this, 'render_settings_page' ),
@@ -64,7 +64,7 @@ class LiteSOC_Admin {
 	public function render_settings_page() {
 		?>
 		<div class="wrap litesoc-admin-wrap">
-			<h1><?php _e( 'LiteSOC Security Settings', 'litesoc' ); ?></h1>
+			<h1><?php _e( '9M2PJU LiteSOC WP Settings', 'litesoc' ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'litesoc_settings' );
@@ -86,7 +86,7 @@ class LiteSOC_Admin {
 	public function add_dashboard_widget() {
 		wp_add_dashboard_widget(
 			'litesoc_events_widget',
-			__( 'LiteSOC Recent Security Events', 'litesoc' ),
+			__( '9M2PJU LiteSOC Recent Security Events', 'litesoc' ),
 			array( $this, 'render_dashboard_widget' )
 		);
 	}
