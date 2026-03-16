@@ -4,7 +4,7 @@ Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
@@ -40,6 +40,11 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 
 == Changelog ==
 
+= 1.1.2 =
+* Finalized WordPress.org compliance fixes.
+* Added GitHub Sponsorship support.
+* Stable release for submission.
+
 = 1.1.1 =
 * Initial release for WordPress.org submission.
 * Updated to GPLv3 (latest GPL) for compliance.
@@ -47,5 +52,5 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 
 == Upgrade Notice ==
 
-= 1.1.1 =
-Initial release. Fixed license headers and documentation for WordPress.org submission.
+= 1.1.2 =
+Final compliant release with full security hardening and sponsorship support.
