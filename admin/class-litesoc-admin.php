@@ -94,6 +94,27 @@ class LiteSOC_Admin {
 				?>
 				</form>
 			</div> <!-- .litesoc-settings-body -->
+			<div class="litesoc-settings-footer">
+				<div class="litesoc-footer-left">
+					<?php 
+					printf(
+						/* translators: 1: author name, 2: author URL */
+						esc_html__( 'By %1$s | Visit %2$s', '9m2pju-litesoc' ),
+						'<a href="https://hamradio.my" target="_blank"><strong>9M2PJU</strong></a>',
+						'<a href="https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin" target="_blank">' . esc_html__( 'plugin site', '9m2pju-litesoc' ) . '</a>'
+					);
+					?>
+				</div>
+				<div class="litesoc-footer-right">
+					<?php 
+					printf(
+						/* translators: %s: version number */
+						esc_html__( 'Version %s', '9m2pju-litesoc' ),
+						esc_html( LITESOC_VERSION )
+					);
+					?>
+				</div>
+			</div>
 		</div> <!-- .litesoc-admin-wrap -->
 		<?php
 	}
