@@ -51,7 +51,7 @@ class LiteSOC_API {
 					'actor'     => $actor,
 					'user_ip'   => isset( $options['user_ip'] ) ? $options['user_ip'] : $this->get_user_ip(),
 					'metadata'  => isset( $options['metadata'] ) ? $options['metadata'] : new stdClass(),
-					'timestamp' => isset( $options['timestamp'] ) ? $options['timestamp'] : date( 'c' ), // ISO 8601
+					'timestamp' => isset( $options['timestamp'] ) ? $options['timestamp'] : gmdate( 'c' ), // ISO 8601
 				),
 			),
 		);
@@ -78,7 +78,7 @@ class LiteSOC_API {
 	 */
 	private function request( $endpoint, $params = array(), $method = 'POST' ) {
 		if ( ! $this->api_key ) {
-			return new WP_Error( 'no_api_key', __( 'LiteSOC API Key is missing.', '9m2pju-litesoc' ) );
+			return new WP_Error( 'no_api_key', esc_html__( 'LiteSOC API Key is missing.', '9m2pju-litesoc' ) );
 		}
 
 		$url     = $this->base_url . $endpoint;
@@ -116,12 +116,13 @@ class LiteSOC_API {
 	}
 
 	private function get_user_ip() {
-		$ip = $_SERVER['REMOTE_ADDR'];
+		$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? wp_unslash( $_SERVER['REMOTE_ADDR'] ) : '127.0.0.1';
+		
 		if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			$ip = wp_unslash( $_SERVER['HTTP_CLIENT_IP'] );
 		} elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
 			// Get the first IP in the list
-			$ips = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
+			$ips = explode( ',', wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) );
 			$ip  = trim( $ips[0] );
 		}
 
@@ -130,7 +131,7 @@ class LiteSOC_API {
 			return $ip;
 		}
 
-		return $_SERVER['REMOTE_ADDR'];
+		return isset( $_SERVER['REMOTE_ADDR'] ) ? wp_unslash( $_SERVER['REMOTE_ADDR'] ) : '127.0.0.1';
 	}
 }
 endif;
