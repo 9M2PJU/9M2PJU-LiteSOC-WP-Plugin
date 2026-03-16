@@ -1,4 +1,4 @@
-.litesoc-admin-wrap {
+.9m2pju-litesoc-wp-admin-wrap {
     max-width: 900px;
     background: #fff;
     padding: 0;
@@ -9,7 +9,7 @@
     border: 1px solid #e2e8f0;
 }
 
-.litesoc-settings-header {
+.9m2pju-litesoc-wp-settings-header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     padding: 2.5rem;
     color: #fff;
@@ -18,7 +18,7 @@
     overflow: hidden;
 }
 
-.litesoc-settings-header::before {
+.9m2pju-litesoc-wp-settings-header::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -29,7 +29,7 @@
     pointer-events: none;
 }
 
-.litesoc-header-content {
+.9m2pju-litesoc-wp-header-content {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -37,7 +37,7 @@
     z-index: 1;
 }
 
-.litesoc-logo-header {
+.9m2pju-litesoc-wp-logo-header {
     height: 80px;
     width: auto;
     border-radius: 8px;
@@ -46,12 +46,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.litesoc-logo-header:hover {
+.9m2pju-litesoc-wp-logo-header:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
 }
 
-.litesoc-title-block h1 {
+.9m2pju-litesoc-wp-title-block h1 {
     margin: 0 !important;
     padding: 0 !important;
     font-size: 2rem;
@@ -61,24 +61,24 @@
     border: none !important;
 }
 
-.litesoc-subtitle {
+.9m2pju-litesoc-wp-subtitle {
     margin: 0.25rem 0 0 0;
     font-size: 1rem;
     color: #94a3b8;
     font-weight: 500;
 }
 
-.litesoc-settings-body {
+.9m2pju-litesoc-wp-settings-body {
     padding: 2.5rem;
 }
 
-.litesoc-event-list {
+.9m2pju-litesoc-wp-event-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.litesoc-event-list li {
+.9m2pju-litesoc-wp-event-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,21 +87,21 @@
     transition: background 0.2s ease;
 }
 
-.litesoc-event-list li:hover {
+.9m2pju-litesoc-wp-event-list li:hover {
     background: #f9f9fb;
 }
 
-.litesoc-event-name {
+.9m2pju-litesoc-wp-event-name {
     font-weight: 600;
     color: #2c3338;
 }
 
-.litesoc-event-meta {
+.9m2pju-litesoc-wp-event-meta {
     font-size: 0.85rem;
     color: #646970;
 }
 
-.litesoc-severity {
+.9m2pju-litesoc-wp-severity {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -111,21 +111,21 @@
     text-align: center;
 }
 
-.litesoc-severity-low { background: #e3f2fd; color: #1976d2; }
-.litesoc-severity-info { background: #e8f5e9; color: #2e7d32; }
-.litesoc-severity-warning { background: #fff3e0; color: #ef6c00; }
-.litesoc-severity-critical { background: #ffebee; color: #c62828; }
+.9m2pju-litesoc-wp-severity-low { background: #e3f2fd; color: #1976d2; }
+.9m2pju-litesoc-wp-severity-info { background: #e8f5e9; color: #2e7d32; }
+.9m2pju-litesoc-wp-severity-warning { background: #fff3e0; color: #ef6c00; }
+.9m2pju-litesoc-wp-severity-critical { background: #ffebee; color: #c62828; }
 
-#litesoc_events_widget .inside {
+#9m2pju_litesoc_wp_events_widget .inside {
     padding: 0;
     margin: 0;
 }
 
-#litesoc_events_widget .litesoc-event-list li {
+#9m2pju_litesoc_wp_events_widget .9m2pju-litesoc-wp-event-list li {
     padding: 10px 15px;
 }
 
-.litesoc-settings-footer {
+.9m2pju-litesoc-wp-settings-footer {
     background: #f8fafc;
     padding: 1.25rem 2.5rem;
     border-top: 1px solid #e2e8f0;
@@ -136,17 +136,17 @@
     font-size: 0.875rem;
 }
 
-.litesoc-footer-left a {
+.9m2pju-litesoc-wp-footer-left a {
     color: #0f172a;
     text-decoration: none;
     font-weight: 600;
 }
 
-.litesoc-footer-left a:hover {
+.9m2pju-litesoc-wp-footer-left a:hover {
     color: #38bdf8;
 }
 
-.litesoc-footer-right {
+.9m2pju-litesoc-wp-footer-right {
     font-weight: 500;
     background: #f1f5f9;
     padding: 2px 8px;

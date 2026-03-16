@@ -4,11 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'LiteSOC_Tracker' ) ) :
+if ( ! class_exists( '_9M2PJU_LiteSOC_WP_Tracker' ) ) :
 /**
  * LiteSOC Event Tracker
  */
-class LiteSOC_Tracker {
+class _9M2PJU_LiteSOC_WP_Tracker {
 	private $api;
 
 	public function __construct( $api ) {
