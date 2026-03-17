@@ -2,7 +2,7 @@
 
 [![LiteSOC](https://img.shields.io/badge/Security-LiteSOC-cyan.svg)](https://litesoc.io)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
-[![Version](https://img.shields.io/badge/Version-1.2.7-green.svg)](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/releases/latest)
+[![Version](https://img.shields.io/badge/Version-1.2.8-green.svg)](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/releases/latest)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-yellow.svg)](https://buymeacoffee.com/9m2pju)
 
 **9M2PJU LiteSOC** is a WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection, Behavioral AI, and Geo-IP Intelligence into your WordPress site.
@@ -51,9 +51,17 @@ The plugin provides granular insights into your site's security posture:
 
 ## 🛠 Installation
 
+### Via WordPress Dashboard (Recommended)
+1. Go to **Plugins > Add New Plugin > Upload Plugin**.
+2. Click **Choose File** and select the `9m2pju-litesoc.zip` package.
+3. Click **Install Now** and then **Activate**.
+
+### Via FTP
 1. Upload the `9m2pju-litesoc` folder to your `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Navigate to the **9M2PJU LiteSOC** menu and enter your API Key from the LiteSOC Dashboard.
+2. Activate the plugin through the **Plugins** menu in WordPress.
+
+### Setup
+Navigate to the **9M2PJU LiteSOC** menu and enter your API Key from the LiteSOC Dashboard.
 
 ## 📈 Statistics & Verification
 
