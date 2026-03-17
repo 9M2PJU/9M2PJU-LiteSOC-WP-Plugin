@@ -146,7 +146,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 					</p>
 					<div class="_9m2pju-litesoc-donation-wrap">
 						<a href="https://www.buymeacoffee.com/9m2pju" target="_blank" class="_9m2pju-litesoc-bmc-button">
-							<img src="<?php echo esc_url( LITESOC_9M2PJU_URL . 'assets/bmc-button.png' ); ?>" alt="Buy Me A Coffee" style="height: 40px !important;width: 144px !important;" >
+							<img src="<?php echo esc_url( LITESOC_9M2PJU_URL . 'assets/bmc-button.png' ); ?>" alt="Buy Me A Coffee" style="height: 32px !important;width: auto !important;" >
 						</a>
 					</div>
 				</div>
