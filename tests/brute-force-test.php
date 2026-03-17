@@ -4,7 +4,7 @@
  */
 
 define('ABSPATH', dirname(__DIR__) . '/');
-define('LITESOC_9M2PJU_VERSION', '1.2.6');
+define('LITESOC_9M2PJU_VERSION', '1.2.7');
 
 // Mock WordPress functions
 function get_option($option, $default = false) {

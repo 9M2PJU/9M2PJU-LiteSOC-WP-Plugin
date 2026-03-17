@@ -2,7 +2,7 @@
 
 [![LiteSOC](https://img.shields.io/badge/Security-LiteSOC-cyan.svg)](https://litesoc.io)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
-[![Version](https://img.shields.io/badge/Version-1.2.6-green.svg)](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/releases/latest)
+[![Version](https://img.shields.io/badge/Version-1.2.7-green.svg)](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/releases/latest)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-yellow.svg)](https://buymeacoffee.com/9m2pju)
 
 **9M2PJU LiteSOC** is a WordPress security plugin that integrates the power of [LiteSOC](https://litesoc.io) real-time threat detection, Behavioral AI, and Geo-IP Intelligence into your WordPress site.
