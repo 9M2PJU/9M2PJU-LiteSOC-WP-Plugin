@@ -12,14 +12,14 @@
 
 ._9m2pju-litesoc-settings-header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    padding: clamp(0.75rem, 2vh, 1.25rem) clamp(1rem, 3vw, 2rem) !important;
+    padding: clamp(1rem, 3.5vh, 2rem) clamp(1.5rem, 4vw, 3rem) !important;
     color: #fff;
     border-bottom: 2px solid #38bdf8;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 ._9m2pju-litesoc-settings-header::before {
@@ -42,7 +42,7 @@
 }
 
 ._9m2pju-litesoc-logo-header {
-    height: clamp(45px, 7vh, 70px);
+    height: clamp(60px, 10vh, 90px);
     width: auto;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
@@ -60,7 +60,7 @@
 ._9m2pju-litesoc-title-block h1 {
     margin: 0 !important;
     padding: 0 !important;
-    font-size: clamp(1.4rem, 3.5vh, 2.1rem) !important;
+    font-size: clamp(1.8rem, 4.5vh, 2.8rem) !important;
     font-weight: 800;
     color: #fff !important;
     letter-spacing: -0.02em;
@@ -70,7 +70,7 @@
 
 ._9m2pju-litesoc-subtitle {
     margin: 0;
-    font-size: clamp(0.75rem, 1.8vh, 0.95rem);
+    font-size: clamp(0.9rem, 2vh, 1.1rem);
     color: #38bdf8;
     font-weight: 600;
     letter-spacing: 0.05em;
