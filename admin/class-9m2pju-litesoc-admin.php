@@ -180,7 +180,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 			'nonce'    => wp_create_nonce( 'litesoc_9m2pju_nonce' ),
 			'labels'   => array(
 				'testing' => esc_html__( 'Testing...', '9m2pju-litesoc' ),
-				'success' => esc_html__( 'Connection Successful!', '9m2pju-litesoc' ),
+				'success' => esc_html__( 'Valid API Key', '9m2pju-litesoc' ),
 				'error'   => esc_html__( 'Connection Failed: ', '9m2pju-litesoc' ),
 			)
 		) );
@@ -243,7 +243,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
 		}
 
-		wp_send_json_success( array( 'message' => esc_html__( 'Connection successful!', '9m2pju-litesoc' ) ) );
+		wp_send_json_success( array( 'message' => esc_html__( 'Valid API Key', '9m2pju-litesoc' ) ) );
 	}
 
 	public function add_action_links( $links ) {
