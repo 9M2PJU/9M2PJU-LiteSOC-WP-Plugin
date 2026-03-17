@@ -1,10 +1,10 @@
 ._9m2pju-litesoc-admin-wrap {
-    max-width: 900px;
+    max-width: 1000px;
     background: #ffffff;
     padding: 0 !important;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    margin: 1rem auto;
+    margin: clamp(1rem, 3vh, 2rem) auto;
     overflow: hidden;
     border: 1px solid rgba(226, 232, 240, 0.6);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -12,11 +12,14 @@
 
 ._9m2pju-litesoc-settings-header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    padding: 0.5rem 1rem !important;
+    padding: clamp(0.75rem, 2vh, 1.25rem) clamp(1rem, 3vw, 2rem) !important;
     color: #fff;
     border-bottom: 2px solid #38bdf8;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 ._9m2pju-litesoc-settings-header::before {
@@ -39,11 +42,11 @@
 }
 
 ._9m2pju-litesoc-logo-header {
-    height: 35px;
+    height: clamp(45px, 7vh, 70px);
     width: auto;
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -57,34 +60,35 @@
 ._9m2pju-litesoc-title-block h1 {
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 1.25rem !important;
+    font-size: clamp(1.4rem, 3.5vh, 2.1rem) !important;
     font-weight: 800;
     color: #fff !important;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     border: none !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 ._9m2pju-litesoc-subtitle {
-    margin: -2px 0 0 0;
-    font-size: 0.75rem;
+    margin: 0;
+    font-size: clamp(0.75rem, 1.8vh, 0.95rem);
     color: #38bdf8;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     opacity: 0.9;
+    text-transform: uppercase;
 }
 
 ._9m2pju-litesoc-settings-body {
-    padding: 0.75rem 1.25rem !important;
+    padding: clamp(1rem, 4vh, 2rem) clamp(1.25rem, 5vw, 2.5rem) !important;
     background: #fff;
 }
 
 ._9m2pju-litesoc-settings-body h2 {
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2.5vh, 1.4rem);
     font-weight: 700;
     color: #0f172a;
-    margin: 0 0 0.5rem 0 !important;
-    padding-bottom: 0.25rem;
+    margin: 0 0 clamp(0.75rem, 2vh, 1.5rem) 0 !important;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #f1f5f9;
 }
 
@@ -186,7 +190,7 @@
 }
 
 ._9m2pju-litesoc-internal-footer {
-    margin-top: 1.5rem;
+    margin-top: clamp(1rem, 3vh, 2.5rem);
     padding-top: 1rem;
     border-top: 1px solid #f1f5f9;
     display: flex;
