@@ -125,8 +125,21 @@ class LITESOC_9M2PJU_LiteSOC_API {
 		$data = json_decode( $body, true );
 
 		$status_code = wp_remote_retrieve_response_code( $response );
+		
 		if ( ! in_array( $status_code, array( 200, 202 ) ) ) {
-			return new WP_Error( 'api_error', isset( $data['message'] ) ? $data['message'] : 'Unknown error' );
+			$message = isset( $data['message'] ) ? $data['message'] : 'Unknown error';
+			
+			if ( 401 === $status_code || 403 === $status_code ) {
+				$message = esc_html__( 'Invalid API Key. Please check your key at litesoc.io', '9m2pju-litesoc' );
+			} elseif ( 404 === $status_code ) {
+				$message = esc_html__( 'API endpoint not found.', '9m2pju-litesoc' );
+			} elseif ( 429 === $status_code ) {
+				$message = esc_html__( 'Rate limit exceeded. Please try again later.', '9m2pju-litesoc' );
+			} elseif ( $status_code >= 500 ) {
+				$message = esc_html__( 'LiteSOC server error. Please try again later.', '9m2pju-litesoc' );
+			}
+			
+			return new WP_Error( 'api_error', $message );
 		}
 
 		return $data;
