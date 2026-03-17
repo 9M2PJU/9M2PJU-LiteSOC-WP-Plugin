@@ -9,6 +9,9 @@
 
 ![Settings Page](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/blob/main/assets/settings-screenshot.png?raw=true)
 
+### 🚨 LiteSOC In Action
+![LiteSOC Dashboard](https://github.com/9M2PJU/9M2PJU-LiteSOC-WP-Plugin/blob/main/assets/dashboard-action.png?raw=true)
+
 ## 🚀 Key Features
 
 - **Real-time Event Ingestion**: Automatically tracks authentication, user management, and admin activities.
