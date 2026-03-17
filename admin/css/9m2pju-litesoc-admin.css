@@ -12,9 +12,9 @@
 
 ._9m2pju-litesoc-settings-header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    padding: 3rem;
+    padding: 1rem 1.5rem;
     color: #fff;
-    border-bottom: 4px solid #38bdf8;
+    border-bottom: 3px solid #38bdf8;
     position: relative;
     overflow: hidden;
 }
@@ -39,11 +39,11 @@
 }
 
 ._9m2pju-litesoc-logo-header {
-    height: 100px;
+    height: 60px;
     width: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
-    border: 2px solid rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -57,7 +57,7 @@
 ._9m2pju-litesoc-title-block h1 {
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 2.5rem !important;
+    font-size: 1.5rem !important;
     font-weight: 800;
     color: #fff !important;
     letter-spacing: -0.025em;
@@ -66,16 +66,15 @@
 }
 
 ._9m2pju-litesoc-subtitle {
-    margin: 0.5rem 0 0 0;
-    font-size: 1.15rem;
+    margin: 0.2rem 0 0 0;
+    font-size: 0.85rem;
     color: #38bdf8;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 ._9m2pju-litesoc-settings-body {
-    padding: 3rem;
+    padding: 1.5rem;
     background: #fff;
 }
 
@@ -91,7 +90,7 @@
 .form-table th {
     font-weight: 600;
     color: #475569;
-    width: 250px;
+    width: 180px;
 }
 
 .regular-text {
@@ -171,8 +170,8 @@
 }
 
 ._9m2pju-litesoc-internal-footer {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
     border-top: 1px solid #f1f5f9;
     display: flex;
     flex-direction: column;

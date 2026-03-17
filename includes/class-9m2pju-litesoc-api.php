@@ -10,10 +10,14 @@ if ( ! class_exists( 'LITESOC_9M2PJU_LiteSOC_API' ) ) :
  */
 class LITESOC_9M2PJU_LiteSOC_API {
 	private $api_key;
+	private $source;
+	private $environment;
 	private $base_url = 'https://api.litesoc.io';
 
 	public function __construct() {
-		$this->api_key = get_option( 'litesoc_9m2pju_api_key' );
+		$this->api_key     = get_option( 'litesoc_9m2pju_api_key' );
+		$this->source      = get_option( 'litesoc_9m2pju_source', 'wordpress' );
+		$this->environment = get_option( 'litesoc_9m2pju_environment', 'production' );
 	}
 
 	public function set_api_key( $key ) {
@@ -50,7 +54,13 @@ class LITESOC_9M2PJU_LiteSOC_API {
 					'event'     => $event_name,
 					'actor'     => $actor,
 					'user_ip'   => isset( $options['user_ip'] ) ? $options['user_ip'] : $this->get_user_ip(),
-					'metadata'  => isset( $options['metadata'] ) ? $options['metadata'] : new stdClass(),
+					'metadata'  => array_merge(
+						array(
+							'source'      => $this->source,
+							'environment' => $this->environment,
+						),
+						isset( $options['metadata'] ) ? (array) $options['metadata'] : array()
+					),
 					'timestamp' => isset( $options['timestamp'] ) ? $options['timestamp'] : gmdate( 'c' ), // ISO 8601
 				),
 			),

@@ -4,12 +4,14 @@
  */
 
 define('ABSPATH', dirname(__DIR__) . '/');
-define('LITESOC_9M2PJU_VERSION', '1.1.7');
+define('LITESOC_9M2PJU_VERSION', '1.2.1');
 
 // Mock WordPress functions
-function get_option($option) {
+function get_option($option, $default = false) {
     if ($option === 'litesoc_9m2pju_api_key') return 'lsoc_live_98540dd48f70b2edaa247c629bf9a4b0';
-    return null;
+    if ($option === 'litesoc_9m2pju_source' && $default === 'wordpress') return 'wordpress';
+    if ($option === 'litesoc_9m2pju_environment' && $default === 'production') return 'production';
+    return $default;
 }
 
 function wp_remote_request($url, $args) {
@@ -22,6 +24,7 @@ function wp_remote_request($url, $args) {
         'User-Agent: ' . $args['headers']['User-Agent']
     ]);
     if (isset($args['body'])) {
+        echo "  [DEBUG] Payload: " . $args['body'] . "\n";
         curl_setopt($ch, CURLOPT_POSTFIELDS, $args['body']);
     }
     curl_setopt($ch, CURLOPT_TIMEOUT, $args['timeout']);

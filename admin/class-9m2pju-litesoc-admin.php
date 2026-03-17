@@ -40,6 +40,8 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 
 	public function register_settings() {
 		register_setting( 'litesoc_9m2pju_options', 'litesoc_9m2pju_api_key', 'sanitize_text_field' );
+		register_setting( 'litesoc_9m2pju_options', 'litesoc_9m2pju_source', 'sanitize_text_field' );
+		register_setting( 'litesoc_9m2pju_options', 'litesoc_9m2pju_environment', 'sanitize_text_field' );
 		
 		add_settings_section(
 			'litesoc_9m2pju_main_section',
@@ -55,6 +57,44 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 			'9m2pju-litesoc',
 			'litesoc_9m2pju_main_section'
 		);
+		
+		add_settings_field(
+			'litesoc_9m2pju_source',
+			esc_html__( 'Source', '9m2pju-litesoc' ),
+			array( $this, 'render_source_field' ),
+			'9m2pju-litesoc',
+			'litesoc_9m2pju_main_section'
+		);
+
+		add_settings_field(
+			'litesoc_9m2pju_environment',
+			esc_html__( 'Environment', '9m2pju-litesoc' ),
+			array( $this, 'render_environment_field' ),
+			'9m2pju-litesoc',
+			'litesoc_9m2pju_main_section'
+		);
+	}
+
+	public function render_source_field() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		$source = get_option( 'litesoc_9m2pju_source' );
+		?>
+		<input type="text" name="litesoc_9m2pju_source" value="<?php echo esc_attr( $source ); ?>" class="regular-text" placeholder="e.g. e-commerce-site">
+		<p class="description"><?php esc_html_e( 'The name of the application or site where the events are originating from (e.g. "my-online-store", "marketing-blog").', '9m2pju-litesoc' ); ?></p>
+		<?php
+	}
+
+	public function render_environment_field() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		$env = get_option( 'litesoc_9m2pju_environment' );
+		?>
+		<input type="text" name="litesoc_9m2pju_environment" value="<?php echo esc_attr( $env ); ?>" class="regular-text" placeholder="e.g. production">
+		<p class="description"><?php esc_html_e( 'The deployment environment (e.g. "production", "staging", "development").', '9m2pju-litesoc' ); ?></p>
+		<?php
 	}
 
 	public function render_api_key_field() {
@@ -78,7 +118,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 				<div class="_9m2pju-litesoc-header-content">
 					<img src="<?php echo esc_url( LITESOC_9M2PJU_URL . 'logo.png' ); ?>" class="_9m2pju-litesoc-logo-header" alt="9M2PJU LiteSOC Logo">
 					<div class="_9m2pju-litesoc-title-block">
-						<h1><?php esc_html_e( '9M2PJU LiteSOC WP Plugin', '9m2pju-litesoc' ); ?></h1>
+						<h1><?php esc_html_e( '9M2PJU LiteSOC', '9m2pju-litesoc' ); ?></h1>
 						<p class="_9m2pju-litesoc-subtitle"><?php esc_html_e( 'Threat Detection & Event Tracking', '9m2pju-litesoc' ); ?></p>
 					</div>
 				</div>
