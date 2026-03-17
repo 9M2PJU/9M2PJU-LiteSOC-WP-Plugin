@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
                 $status.removeClass('success').addClass('error').text('AJAX error. Please try again.').fadeIn();
             },
             complete: function() {
-                $btn.prop('disabled', false).text('Test Connection');
+                $btn.prop('disabled', false).text('Test API Key');
             }
         });
     });

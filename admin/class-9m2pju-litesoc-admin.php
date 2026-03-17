@@ -108,7 +108,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 		?>
 		<div class="_9m2pju-litesoc-api-key-wrap">
 			<input type="password" name="litesoc_9m2pju_api_key" id="litesoc_9m2pju_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
-			<button type="button" id="_9m2pju-litesoc-test-connection" class="button button-secondary"><?php esc_html_e( 'Test Connection', '9m2pju-litesoc' ); ?></button>
+			<button type="button" id="_9m2pju-litesoc-test-connection" class="button button-secondary"><?php esc_html_e( 'Test API Key', '9m2pju-litesoc' ); ?></button>
 			<span id="_9m2pju-litesoc-test-status" class="test-status"></span>
 		</div>
 		<?php

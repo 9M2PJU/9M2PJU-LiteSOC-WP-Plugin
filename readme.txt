@@ -4,7 +4,7 @@ Tags: security, litesoc, threat-detection, cyber-security, brute-force
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://buymeacoffee.com/9m2pju
@@ -39,6 +39,9 @@ Yes, it includes X-Forwarded-For support for accurate IP tracking.
 1. The 9M2PJU LiteSOC Admin Dashboard.
 
 == Changelog ==
+
+= 1.3.4 =
+* UX: Renamed test button to "Test API Key" for better clarity.
 
 = 1.3.3 =
 * UX: Removed "Connection Failed" prefix for cleaner, more direct error messages.
