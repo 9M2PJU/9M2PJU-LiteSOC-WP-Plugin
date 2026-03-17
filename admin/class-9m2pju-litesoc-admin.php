@@ -181,7 +181,7 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 			'labels'   => array(
 				'testing' => esc_html__( 'Testing...', '9m2pju-litesoc' ),
 				'success' => esc_html__( 'Valid API Key', '9m2pju-litesoc' ),
-				'error'   => esc_html__( 'Connection Failed: ', '9m2pju-litesoc' ),
+				'error'   => '',
 			)
 		) );
 	}
