@@ -104,7 +104,12 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 		$key = get_option( 'litesoc_9m2pju_api_key' );
 		?>
 		<input type="password" name="litesoc_9m2pju_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
-		<p class="description"><?php esc_html_e( 'Enter your LiteSOC API Key from your dashboard.', '9m2pju-litesoc' ); ?></p>
+		<?php
+		echo '<p class="description">' . sprintf(
+			esc_html__( 'To get your API Key, please register at %1$s. Once logged in, you can find your key under Settings > My API Key in the LiteSOC dashboard.', '9m2pju-litesoc' ),
+			'<a href="https://litesoc.io" target="_blank">litesoc.io</a>'
+		) . '</p>';
+		?>
 		<?php
 	}
 
