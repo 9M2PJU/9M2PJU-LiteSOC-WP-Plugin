@@ -1,17 +1,15 @@
 <?php
 /**
- * LiteSOC Brute-Force Simulation Script (test1-test5)
+ * LiteSOC Impossible Travel Simulation for hamradio.my
  */
 
 define('ABSPATH', dirname(__DIR__) . '/');
 define('LITESOC_9M2PJU_VERSION', '1.2.9');
 
 // Mock WordPress functions
-function get_option($option, $default = false) {
+function get_option($option) {
     if ($option === 'litesoc_9m2pju_api_key') return 'lsoc_live_98540dd48f70b2edaa247c629bf9a4b0';
-    if ($option === 'litesoc_9m2pju_source' && $default === 'wordpress') return 'wordpress';
-    if ($option === 'litesoc_9m2pju_environment' && $default === 'production') return 'production';
-    return $default;
+    return null;
 }
 
 function wp_remote_request($url, $args) {
@@ -24,7 +22,6 @@ function wp_remote_request($url, $args) {
         'User-Agent: ' . $args['headers']['User-Agent']
     ]);
     if (isset($args['body'])) {
-        echo "  [DEBUG] Payload: " . $args['body'] . "\n";
         curl_setopt($ch, CURLOPT_POSTFIELDS, $args['body']);
     }
     curl_setopt($ch, CURLOPT_TIMEOUT, $args['timeout']);
@@ -64,37 +61,41 @@ require_once dirname(__DIR__) . '/includes/class-9m2pju-litesoc-api.php';
 
 $api = new LITESOC_9M2PJU_LiteSOC_API();
 
-$usernames = ['test1', 'test2', 'test3', 'test4', 'test5'];
-$fake_ip = '103.252.202.' . rand(1, 254);
+$user = 'traveler_9m2pju';
 
-echo "Starting targeted brute-force simulation for users test1-test5 from IP $fake_ip...\n\n";
+echo "Starting Impossible Travel simulation for user '$user'...\n";
 
-foreach ($usernames as $user) {
-    echo "--- Simulating brute-force sequence for user: $user ---\n";
-    
-    for ($i = 1; $i <= 3; $i++) {
-        echo "Attempt $i: Sending 'auth.login_failed' for '$user'...\n";
-        
-        $result = $api->track('auth.login_failed', [
-            'actor' => $user,
-            'user_ip' => $fake_ip,
-            'metadata' => [
-                'reason' => 'invalid_password',
-                'attempt' => $i,
-                'method' => 'targeted_brute_sim',
-                'browser' => 'Mozilla/5.0 (Python Simulation)'
-            ]
-        ]);
-        
-        if (is_wp_error($result)) {
-            echo "  Error: " . $result->get_error_message() . "\n";
-        } else {
-            echo "  Sent: " . json_encode($result) . "\n";
-        }
-        
-        usleep(300000); // 300ms delay between attempts
-    }
-    echo "\n";
-}
+// 1. Malaysia login
+$ip_my = '161.142.123.45'; // Malaysia IP
+echo "Step 1: Successful login from Malaysia (IP: $ip_my)\n";
+$result1 = $api->track('auth.login_success', [
+    'actor' => $user,
+    'user_ip' => $ip_my,
+    'metadata' => [
+        'method' => 'impossible_travel_sim',
+        'site' => 'hamradio.my',
+        'source' => 'hamradio.my',
+        'environment' => 'production'
+    ]
+]);
+echo "  Result: " . json_encode($result1) . "\n\n";
 
-echo "Simulation complete. 15 events sent to LiteSOC (3 failed attempts per user).\n";
+echo "Waiting 5 seconds for travel simulation...\n";
+sleep(5);
+
+// 2. USA login
+$ip_us = '8.8.8.8'; // USA (Google Public DNS)
+echo "Step 2: Successful login from USA (IP: $ip_us)\n";
+$result2 = $api->track('auth.login_success', [
+    'actor' => $user,
+    'user_ip' => $ip_us,
+    'metadata' => [
+        'method' => 'impossible_travel_sim',
+        'site' => 'hamradio.my',
+        'source' => 'hamradio.my',
+        'environment' => 'production'
+    ]
+]);
+echo "  Result: " . json_encode($result2) . "\n\n";
+
+echo "Simulation complete. Check LiteSOC dashboard for 'Geographic Anomaly' or 'Impossible Travel' alerts.\n";
