@@ -118,6 +118,40 @@
     box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15) !important;
 }
 
+._9m2pju-litesoc-api-key-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#_9m2pju-litesoc-test-connection {
+    height: 32px;
+    padding: 0 15px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+#_9m2pju-litesoc-test-connection:not(:disabled):hover {
+    background: #f8fafc !important;
+    border-color: #38bdf8 !important;
+    color: #38bdf8 !important;
+}
+
+.test-status {
+    font-size: 13px;
+    font-weight: 600;
+    display: none;
+}
+
+.test-status.success {
+    color: #15803d;
+}
+
+.test-status.error {
+    color: #b91c1c;
+}
+
 .description {
     margin-top: 2px !important;
     font-size: 12px !important;

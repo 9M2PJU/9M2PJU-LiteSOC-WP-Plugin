@@ -84,6 +84,13 @@ class LITESOC_9M2PJU_LiteSOC_API {
 	}
 
 	/**
+	 * Verify API Key
+	 */
+	public function verify_key() {
+		return $this->request( '/events', array( 'limit' => 1 ), 'GET' );
+	}
+
+	/**
 	 * Internal request handler
 	 */
 	private function request( $endpoint, $params = array(), $method = 'POST' ) {

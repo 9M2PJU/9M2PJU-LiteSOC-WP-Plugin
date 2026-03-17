@@ -24,6 +24,9 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
 		add_filter( 'plugin_action_links_' . $this->plugin_basename, array( $this, 'add_action_links' ) );
+		
+		// AJAX for API Test
+		add_action( 'wp_ajax_litesoc_9m2pju_test_api', array( $this, 'ajax_test_api' ) );
 	}
 
 	public function add_menu_pages() {
@@ -103,7 +106,11 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 		}
 		$key = get_option( 'litesoc_9m2pju_api_key' );
 		?>
-		<input type="password" name="litesoc_9m2pju_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
+		<div class="_9m2pju-litesoc-api-key-wrap">
+			<input type="password" name="litesoc_9m2pju_api_key" id="litesoc_9m2pju_api_key" value="<?php echo esc_attr( $key ); ?>" class="regular-text">
+			<button type="button" id="_9m2pju-litesoc-test-connection" class="button button-secondary"><?php esc_html_e( 'Test Connection', '9m2pju-litesoc' ); ?></button>
+			<span id="_9m2pju-litesoc-test-status" class="test-status"></span>
+		</div>
 		<?php
 		echo '<p class="description">' . sprintf(
 			/* translators: %1$s: LiteSOC website URL */
@@ -166,6 +173,17 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 			return;
 		}
 		wp_enqueue_style( '9m2pju-litesoc-admin', LITESOC_9M2PJU_URL . 'admin/css/9m2pju-litesoc-admin.css', array(), LITESOC_9M2PJU_VERSION );
+		wp_enqueue_script( '9m2pju-litesoc-admin', LITESOC_9M2PJU_URL . 'admin/js/litesoc-admin.js', array( 'jquery' ), LITESOC_9M2PJU_VERSION, true );
+		
+		wp_localize_script( '9m2pju-litesoc-admin', 'litesoc_9m2pju_vars', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce'    => wp_create_nonce( 'litesoc_9m2pju_nonce' ),
+			'labels'   => array(
+				'testing' => esc_html__( 'Testing...', '9m2pju-litesoc' ),
+				'success' => esc_html__( 'Connection Successful!', '9m2pju-litesoc' ),
+				'error'   => esc_html__( 'Connection Failed: ', '9m2pju-litesoc' ),
+			)
+		) );
 	}
 
 	public function add_dashboard_widget() {
@@ -200,6 +218,32 @@ class LITESOC_9M2PJU_LiteSOC_Admin {
 		}
 		echo '</ul>';
 		echo '<p><a href="' . esc_url( admin_url( 'admin.php?page=9m2pju-litesoc' ) ) . '">' . esc_html__( 'View all events', '9m2pju-litesoc' ) . '</a></p>';
+	}
+
+	public function ajax_test_api() {
+		check_ajax_referer( 'litesoc_9m2pju_nonce', 'nonce' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( array( 'message' => 'Unauthorized' ) );
+		}
+
+		$api_key = isset( $_POST['api_key'] ) ? sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) : '';
+		
+		if ( empty( $api_key ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'API Key is empty', '9m2pju-litesoc' ) ) );
+		}
+
+		// Use a temporary API instance with the provided key
+		$temp_api = new LITESOC_9M2PJU_LiteSOC_API();
+		$temp_api->set_api_key( $api_key );
+		
+		$result = $temp_api->verify_key();
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => esc_html__( 'Connection successful!', '9m2pju-litesoc' ) ) );
 	}
 
 	public function add_action_links( $links ) {
