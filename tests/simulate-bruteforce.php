@@ -4,7 +4,7 @@
  */
 
 define('ABSPATH', __DIR__ . '/');
-define('LITESOC_VERSION', '1.0.0');
+define('LITESOC_VERSION', '1.3.5');
 
 // Mock WordPress functions
 function get_option($option) {

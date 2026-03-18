@@ -1,12 +1,12 @@
 <?php
 /**
- * Final Live Test for LiteSOC v1.0.7
+ * Final Live Test for LiteSOC v1.3.5
  * 
  * To run: php final-live-test.php
  */
 
 define('ABSPATH', __DIR__ . '/');
-define('LITESOC_VERSION', '1.0.7');
+define('LITESOC_VERSION', '1.3.5');
 
 // Mock Server Environment
 $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
@@ -64,7 +64,7 @@ require_once 'includes/class-litesoc-api.php';
 
 $api = new LiteSOC_API();
 
-echo "--- 🚀 STARTING LIVE TEST v1.0.7 ---\n";
+echo "--- 🚀 STARTING LIVE TEST v1.3.5 ---\n";
 
 // 1. Test Login Success
 echo "1. Tracking auth.login_success for '9M2PJU'...\n";
